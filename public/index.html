@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Login Form -->
+  <div class="login-container" id="login-form">
+    <h2>Login</h2>
+    <form id="login-details-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+
+      <button type="submit">Login</button>
+    </form>
+    <p id="login-error" style="color: red; display: none;">Invalid username or password. Please try again.</p>
+  </div>
+
+  <!-- Department Management Section (Hidden until logged in) -->
+  <div class="grid-container" id="department-section" style="display: none;">
+    <button id="homepage-btn" class="homepage-button">Homepage</button>
+    <button id="logout-btn" class="logout-button">Logout</button>
+    <img src="assets/3.png" alt="Image not found" class="resized-image" id="department-image">
+    <p id="welcome-message" style="color: green; font-size: 1.2em; display: none;">Welcome! Select a department to get started.</p>
+
+    <div class="department-buttons">
+      <button class="grid-item" id="hr-btn">Human Resources</button>
+      <button class="grid-item" id="procurement-btn">Procurement</button>
+      <button class="grid-item" id="operation-btn">Operation</button>
+      <button class="grid-item" id="inventory-btn">Inventory</button>
+      <button class="grid-item" id="project-btn">Project / Tender</button>
+      <button class="grid-item" id="hse-btn">HSE</button>
+      <button class="grid-item" id="logistics-btn">Logistics</button>
+      <button class="grid-item" id="tba-btn">TBA</button>
+    </div>
+  </div>
+
+  <!-- Department File Explorer -->
+  <div class="form-container" id="department-form" style="display: none;">
+    <div class="explorer-header">
+      <div>
+        <h2 id="department-title">Department Folder & File Management</h2>
+        <div id="breadcrumb" class="breadcrumb"></div>
+      </div>
+      <button id="refresh-btn" type="button">Refresh</button>
+    </div>
+
+    <div class="explorer-toolbar">
+      <button id="back-btn" type="button">Back</button>
+      <button id="back-home-btn" type="button">Back to Homepage</button>
+    </div>
+
+    <p class="explorer-hint">Right click inside this area to upload file, upload folder, or create folder. Right click any file/folder to manage it.</p>
+    <div id="department-output" class="file-explorer"></div>
+    <p id="feedback-msg" style="color: green; display: none;">Action completed successfully!</p>
+  </div>
+
+  <div id="context-menu" class="context-menu"></div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
